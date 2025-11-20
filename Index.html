@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Secret 4-Tap Locker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>Secret 4-Tap Locker</h1>
+      <p class="tagline">Upload real image → set 4 taps → lock. Decoy shows until correct taps.</p>
+    </header>
+
+    <section class="card">
+      <label>Real image (private)</label>
+      <input id="fileReal" type="file" accept="image/*" />
+      <small>Kept encrypted in your browser only.</small>
+    </section>
+
+    <section class="card">
+      <label>Decoy image (shown by default)</label>
+      <input id="fileDecoy" type="file" accept="image/*" />
+      <small>Choose a harmless decoy image.</small>
+    </section>
+
+    <section class="card">
+      <div id="stage" class="stage">
+        <img id="display" alt="Decoy or Locked Image" src="">
+      </div>
+
+      <div class="controls">
+        <button id="setupBtn">Setup secret (4 taps)</button>
+        <button id="lockBtn">Lock / Save</button>
+        <button id="tryBtn">Try Unlock</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <p id="msg" class="msg"></p>
+    </section>
+
+    <section class="card small">
+      <h3>Notes</h3>
+      <ul>
+        <li>All encryption happens locally (Web Crypto). If you clear browser storage, encrypted image is lost.</li>
+        <li>Keep the tap positions & order secret.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <small>Prototype — do not use for mission-critical secrets without review.</small>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
